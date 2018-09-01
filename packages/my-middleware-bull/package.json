@@ -1,0 +1,19 @@
+{
+  "name": "@bitliner/my-middleware-bull",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "ava"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bull": "^3.4.7"
+  },
+  "devDependencies": {
+    "ava": "^0.25.0",
+    "redis-server": "^1.2.2"
+  }
+}
