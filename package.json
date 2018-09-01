@@ -1,6 +1,9 @@
 {
   "name": "root",
   "private": true,
+  "scripts": {
+    "test": "lerna run test"
+  },
   "devDependencies": {
     "ava": "^0.25.0",
     "cz-conventional-changelog": "^2.1.0",
