@@ -19,8 +19,8 @@ Example of a job server
 const MyMiddleware = require('my-middleware')
 const MyMiddlewareAmpq = require('my-middleware-ampq')
 
-const workerCb(job, done)=>{ console.log(job) }
-const myMiddlewareAmpq = new MyMiddlewareAmq({ workerCb })
+const onMessage = (job, done) => { console.log(job) }
+const myMiddlewareAmpq = new MyMiddlewareAmq({ onMessage })
 
 const distributedSystem = new MyMiddleware(myMiddlewareAmpq)
 
@@ -32,18 +32,19 @@ distributedSystem.startServer()
 const MyMiddleware = require('my-middleware')
 const MyMiddlewareAmpq = require('my-middleware-ampq')
 
-
 const myMiddlewareAmpqClient = new MyMiddlewareAmq({ /* options */})
 const distributedSystem = new MyMiddleware(myMiddlewareAmpqClient)
 
 distributedSystem.startClient()
 
-distributedSystem.send()
+const msg = { body:'a message...' }
+
+distributedSystem.send(msg)
 ```
 
 ## Supported middleware
 
-- [my-middleare-bull](http://github.com/bitliner/my-middleare-bull)
+- [my-middleare-bull](https://github.com/bitliner/my-middleware/tree/master/packages/my-middleware-bull)
 
 **TODO**
 
@@ -52,3 +53,4 @@ distributedSystem.send()
 
 ## How to add a middleware
 
+TBD
